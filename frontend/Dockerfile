@@ -1,6 +1,7 @@
-FROM nginx:1.29.0-alpine
+FROM nginx
 RUN rm -rf /usr/share/nginx/html/*
 RUN rm -rf /etc/nginx/nginx.conf
 RUN rm -rf /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY static /usr/share/nginx/html/
+ADD nginx.conf /etc/nginx/nginx.conf
+ADD static /usr/share/nginx/html/
+EXPOSE 80
