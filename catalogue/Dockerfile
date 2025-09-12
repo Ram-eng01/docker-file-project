@@ -4,7 +4,7 @@ WORKDIR /app/server
 COPY *.json .
 RUN npm install
 COPY *.js .
-RUN chown -R roboshop:roboshop /opt/server
+
 ENV MONGO="true"
 USER roboshop
 CMD [ "node","server.js" ]
