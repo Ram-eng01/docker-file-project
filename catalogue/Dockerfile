@@ -1,4 +1,5 @@
 FROM node:20-alpine3.21
+RUN apt-update -y
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
 WORKDIR /app/server
 COPY *.json .
