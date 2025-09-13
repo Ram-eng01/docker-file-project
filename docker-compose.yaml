@@ -5,19 +5,19 @@ networks:
     #external: true #I created network already using docker network create roboshop
 services:
   mongodb:
-    image: mongodb:v1
     container_name: mongodb
+    build: ./mongodb
    
   catalogue:
-    image: catalogue:v1
     container_name: catalogue
+    build: ./catalogue
     depends_on:
     - mongodb
 
 
   frontend:
-    image: frontend:v1
     container_name: frontend
+    build: ./frontend
     ports:
     - "80:80"
     depends_on:
